@@ -12,6 +12,11 @@ class SessionController {
       console.log('usuario nao encontrado')
       return res.redirect('/')
     }
+    if(!await user.checkPassword(password)) {
+      console.log('senha incorreta')
+      return res.redirect('/')
+    }
+    return res.redirect('/app/dashboard')
   }
 }
 

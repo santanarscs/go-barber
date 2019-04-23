@@ -8,7 +8,7 @@ class UserController {
     const { filename: avatar } = req.file
     await User.create({ ...req.body, avatar })
 
-    return res.rendirect('/')
+    return res.redirect('/')
   }
 }
 module.exports = new UserController()
