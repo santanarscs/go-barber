@@ -16,6 +16,7 @@ class SessionController {
       console.log('senha incorreta')
       return res.redirect('/')
     }
+    req.session.user = user
     return res.redirect('/app/dashboard')
   }
 }
